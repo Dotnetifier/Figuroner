@@ -1,0 +1,125 @@
+/* 
+    Created on : 13-okt-2015, 13:45:54
+    Author     : Paul
+*/
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('typefaces/opensanslight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('typefaces/opensansregular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('typefaces/opensansbold.woff') format('woff');
+}
+
+.hidden {
+    display: none;
+}
+.page {
+    opacity: 0;
+    display: none;
+}
+.message {
+    opacity: 0;
+}
+.scale-zero {
+    transform: scale(0);
+}
+.text-huge {
+    font-size: 5em;
+}
+.footer {
+    z-index: 10;
+    border-left: none;
+    border-right: none;
+}
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
+    border: none;
+    border-top: 1px solid #d8d8d8;
+}
+img.responsive {
+    max-width: 100%;
+}
+ul[data-role=listview] {
+    margin-top: 10px!important;
+}
+.text-center {
+    text-align: center;
+}
+div[data-role=page] {
+    display: none;
+}
+a.simple {
+    text-decoration: none;
+    font-weight: normal;
+}
+.light {
+    opacity: 0.5;
+}
+.ui-focus, .ui-btn:focus, a:not(.simple):focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: 0 0 5px #aaaaaa !important;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid #dddddd;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid #dddddd;
+    padding: 3px;
+}
+th {
+    text-align: left;
+}
+tr:nth-child(even)
+{
+    background-color: #eeeeee;
+}
+.result-grade {
+    font-size: 10em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.grade-form {
+    transform-origin: 50% 0%;
+}
+.button-float {
+    position: fixed;
+    bottom: 1.1em;
+    right: 1em;
+    height: 3.5em;
+    width: 3.5em;
+    padding: 1.12em 0em;
+    border-radius: 100px;
+    box-shadow: 0px 0.2em 0.5em #888;
+    transition: box-shadow 250ms ease-in-out;
+    z-index: 100;
+}
+.button-float > * {
+    font-size: 1.5em!important;
+    margin-left: -0.185em;
+    margin-top: -0.08em;
+}
+.button-float:hover, .button-float:active {
+    box-shadow: 0px 0.3em 1em #444;
+}

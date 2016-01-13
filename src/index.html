@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Figuroner</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/figuroner.css" />
+        <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css" />
+
+        <link rel="apple-touch-icon-precomposed" href="res/favicon-152.png">
+        <link rel="icon" href="res/favicon-32.png" sizes="32x32">
+        <link rel="icon" href="res/favicon-16.png" sizes="16x16">
+    </head>
+    <body>
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">Figuroner</a></h1>
+                </li>
+            </ul>
+        </nav>
+        <noscript>
+        <div class="row">
+            <div class="column">
+                Het spijt ons, maar om deze website te kunnen gebruiken moet JavaScript ingeschakeld zijn. Ook moet de toegang voor externe bronnen ingeschakeld zijn.
+            </div>
+        </div>
+        </noscript>
+        <p id="load-spinner" class="text-center text-huge">
+            <span class="fa fa-circle-o-notch fa-spin"></span>
+        </p>
+        <div id="home" class="page">
+            <div class="row">
+                <div class="small-12 column">
+                    <h2>Welkom</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 column">
+                    <p>
+                        Met deze webapp kan je je benodigde cijfer berekenen om op een bepaald gemiddelde te komen, als je je vorige cijfers, de wegingen daarvan, en je streefcijfer invult.
+                    </p>
+                    <a class="button" href="#enter-grades">Cijfers invullen <span class="fa fa-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="enter-grades" class="page">
+            <div class="row">
+                <div class="column">
+                    <h2>Cijfers invullen</h2>
+                    <p>
+                        Vul hier je cijfers en de wegingen daarvan in
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="load-data-container">
+                        <button class="small load-data">Opgeslagen gegevens laden</button>
+                        <span class="message data-loaded fa fa-check"></span>
+                    </div>
+                    <div id="grade-input-form-container">
+
+                    </div>
+                    <button class="add-grade tiny"><span class="fa fa-plus"></span> Toevoegen</button>
+                    <hr/>
+                    <button id="enter-grades-complete">Streefcijfer invullen <span class="fa fa-chevron-right"></span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="entered-grades-incorrect" class="page">
+            <div class="row">
+                <div class="column">
+                    <h3>Hier klopt iets niet</h3>
+                    <p>
+                        Vul één of meer cijfers met wegingen in. Controleer of de ingevulde cijfers geen fouten bevatten.
+                    </p>
+                    <p>
+                        Cijfers zijn geldig tussen en inclusief 1 en 10. Wegingen zijn geldig tussen en inclusief 1 en 32.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="enter-target-grade" class="page">
+            <div class="row">
+                <div class="column">
+                    <h2>Streefcijfer opgeven</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <p>
+                        Vul hier de weging van je volgende cijfer in
+                    </p>
+                    <form>
+                        <input id="next-grade-weight-input" type="number" min="1" max="32" placeholder="Weging volgende cijfer" required/>
+                    </form>
+                    <p>
+                        Vul hier je streefcijfer in
+                    </p>
+                    <form>
+                        <input id="target-grade-input" type="number" min="1" max="10" step="0.1" placeholder="Streefcijfer" required/>
+                    </form>
+                    <button id="enter-target-grade-complete">Resultaten bekijken <span class="fa fa-chevron-right"></span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="entered-target-grade-incorrect" class="page">
+            <div class="row">
+                <div class="column">
+                    <h2>Hier klopt iets niet</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <p>
+                        Vul de weging van je volgende cijfer in en vul je streefcijfer in. Beide getallen zijn geldig als ze tussen en inclusief 1 en 10 liggen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="overview" class="page">
+            <div class="row">
+                <div class="column">
+                    <h2>Overzicht</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <h4>Reeds behaalde cijfers</h4>
+                    <table id="overview-grades-table">
+                        <thead>
+                            <tr>
+                                <th>Cijfer</th>
+                                <th>Weging</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overview-grades-table-body">
+                            <tr><td><i>a</i></td><td><i>b</i></td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <b>Weging volgende cijfer:</b> <span id="overview-next-grade-weight"><i>c</i></span><br/>
+                    </p>
+                    <p>
+                        <b>Streefcijfer:</b> <span id="overview-target-grade"><i>d</i></span>
+                    </p>
+                    <div>
+                        <p>
+                            Als je deze gegevens opslaat kan je ze op een later moment opnieuw laden.
+                        </p>
+                        <button class="save-data small"><span class="fa fa-save"></span> Deze gegevens opslaan</button>
+                        <span class="message data-saved fa fa-check"></span>
+                    </div>
+                    <div>
+                        <a class="button" id="overview-complete">Cijfer berekenen <span class="fa fa-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="results" class="page">
+            <div class="row">
+                <div class="column">
+                    <h2>Resultaten</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <p>
+                        Het cijfer dat je minimaal moet halen is:
+                    </p>
+                    <p id="results-desired-grade" class="result-grade">
+                        <i>n</i>
+                    </p>
+                    <p id="results-desired-grade-comment">
+                        <i>"c"</i>
+                    </p>
+                    <div>
+                        <a class="button" href="#home"><span class="fa fa-undo"></span> Opnieuw</a>
+                    </div>
+                    <div>
+                        <button class="small warning delete-data"><span class="fa fa-remove"></span> Opgeslagen data verwijderen</button>
+                        <span class="message data-deleted fa fa-check"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="panel footer fixed-footer">
+            <p class="text-center">© Paul 2015</p>
+        </div>
+
+        <a class="button button-float back-button scale-zero"><span class="fa fa-chevron-left"></span></a>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/figuroner.js"></script>
+    </body>
+</html>
