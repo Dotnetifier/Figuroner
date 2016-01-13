@@ -153,13 +153,11 @@ function pageChanged() {
     }
     if (localStorage.getItem('grades') === null && localStorage.getItem('nextGradeWeight') === null && localStorage.getItem('targetGrade') === null)
     {
-        $('.load-data-container').hide();
-        $('.load-data').hide();
+        $('.load-data-container, .load-data, .delete-data-container, .delete-data').hide();
     }
     else
     {
-        $('.load-data-container').show();
-        $('.load-data').show();
+        $('.load-data-container, .load-data, .delete-data-container, .delete-data').show();
     }
     if (currentPageID === 'home')
     {
@@ -494,4 +492,4 @@ $(document).ready(function ()
 }
 );
 
-	
+    
