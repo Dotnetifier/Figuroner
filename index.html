@@ -5,9 +5,24 @@
     <title>Figuroner by Dotnetifier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="apple-touch-icon-precomposed" href="app/res/favicon-152.png">
+    <link rel="icon" href="app/res/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="app/res/favicon-16.png" sizes="16x16">
     <style>
         body {
             padding-top: 50px;
+        }
+
+        #figuroner-logo {
+            width: 5em;
+            height: 5em;
+            display: block;
+            margin: 0 auto;
+        }
+        hr {
+            border-color: #BBBBBB;
+            width: 50%;
+            margin: 3em auto;
         }
     </style>
 </head>
@@ -43,9 +58,13 @@
     </section>
 
     <div class="container">
-        <h3>
-            <a id="what-is-figuroner" class="anchor" href="#what-is-figuroner" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Figuroner?
-        </h3>
+        <div>
+            <img id="figuroner-logo" src="app/res/favicon.svg" />
+        </div>
+
+        <hr />
+
+        <h3>What is Figuroner?</h3>
 
         <p>Figuroner is a small web app where you can enter your grades (and its grade weight). It's a school project and it's written entirely in HTML, CSS and JavaScript, built on top of Foundation (by ZURB). It uses <a href="https://github.com/greensock">GSAP</a> for all animations.</p>
 
