@@ -15,7 +15,7 @@ var gradeFormSource = '<form class="grade-form row collapse" action="javascript:
         '<div class="small-6 columns">' +
         '<div class="row collapse">' +
         '<div class="small-9 column">' +
-        '<input type="number" class="grade-form-grade-weight" placeholder="Weging" min="1" max="32"/>' +
+        '<input type="number" class="grade-form-grade-weight" placeholder="Weging" min="1" max="10"/>' +
         '</div>' +
         '<div class="small-3 column">' +
         '<button type="button" class="postfix columns remove-this-grade warning" title="Verwijderen"><span class="fa fa-remove"></span></button>' +
@@ -223,7 +223,7 @@ function parseGrades()
         var grade = {};
         var gradeForm = $(e);
         var gradeFormGradeHeight = gradeForm.find('.grade-form-grade-height').val(), gradeFormGradeWeight = gradeForm.find('.grade-form-grade-weight').val();
-        if (isNumeric(gradeFormGradeHeight) && isNumeric(gradeFormGradeWeight) && gradeFormGradeHeight >= 1 && gradeFormGradeHeight <= 10 && gradeFormGradeWeight >= 1 && gradeFormGradeWeight <= 32)
+        if (isNumeric(gradeFormGradeHeight) && isNumeric(gradeFormGradeWeight) && gradeFormGradeHeight >= 1 && gradeFormGradeHeight <= 10 && gradeFormGradeWeight >= 1 && gradeFormGradeWeight <= 10)
         {
             grade.height = Math.round(gradeFormGradeHeight * 10) / 10;
             grade.weight = Math.round(gradeFormGradeWeight);
@@ -349,7 +349,7 @@ function navigateToOverview()
 {
     var canContinue = true;
     var nextGradeWeightValue = nextGradeWeightInput.val();
-    if (isNumeric(nextGradeWeightValue) && nextGradeWeightValue >= 1 && nextGradeWeightValue <= 32)
+    if (isNumeric(nextGradeWeightValue) && nextGradeWeightValue >= 1 && nextGradeWeightValue <= 10)
     {
         nextGradeWeight = Math.round(nextGradeWeightValue * 10) / 10;
         sessionStorage.setItem('nextGradeWeight', nextGradeWeight);
