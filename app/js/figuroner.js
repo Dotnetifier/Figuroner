@@ -15,7 +15,7 @@ var gradeFormSource = '<form class="grade-form row collapse" action="javascript:
         '<div class="small-6 columns">' +
         '<div class="row collapse">' +
         '<div class="small-9 column">' +
-        '<input type="number" class="grade-form-grade-weight" placeholder="Weging" min="1" max="10"/>' +
+        '<input type="number" class="grade-form-grade-weight" placeholder="Weging" min="1" max="32"/>' +
         '</div>' +
         '<div class="small-3 column">' +
         '<button type="button" class="postfix columns remove-this-grade warning" title="Verwijderen"><span class="fa fa-remove"></span></button>' +
@@ -202,6 +202,7 @@ function addGrade()
     gradeInputFormContainer.append(newGrade);
     TweenMax.from(newGrade, animationDuration * 2, {scale: 0, opacity: 0});
     newGrade.find('.remove-this-grade').click(removeGrade);
+    newGrade.find('.grade-form-grade-height').focus();
     handleFooter();
 }
 
@@ -223,7 +224,7 @@ function parseGrades()
         var grade = {};
         var gradeForm = $(e);
         var gradeFormGradeHeight = gradeForm.find('.grade-form-grade-height').val(), gradeFormGradeWeight = gradeForm.find('.grade-form-grade-weight').val();
-        if (isNumeric(gradeFormGradeHeight) && isNumeric(gradeFormGradeWeight) && gradeFormGradeHeight >= 1 && gradeFormGradeHeight <= 10 && gradeFormGradeWeight >= 1 && gradeFormGradeWeight <= 10)
+        if (isNumeric(gradeFormGradeHeight) && isNumeric(gradeFormGradeWeight) && gradeFormGradeHeight >= 1 && gradeFormGradeHeight <= 10 && gradeFormGradeWeight >= 1 && gradeFormGradeWeight <= 32)
         {
             grade.height = Math.round(gradeFormGradeHeight * 10) / 10;
             grade.weight = Math.round(gradeFormGradeWeight);
@@ -341,7 +342,8 @@ function createResults()
         }
         resultsDesiredGrade.html(Math.ceil(desiredGrade * 10) / 10);
         TweenMax.from(resultsDesiredGrade, animationDuration * 2, {scale: 0, opacity: 0, delay: animationDuration * 2});
-        TweenMax.from(resultsDesiredGradeComment, animationDuration * 4, {opacity: 0, delay: animationDuration * 3});
+        TweenMax.from(resultsDesiredGradeComment, animationDuration * 4, { opacity: 0, delay: animationDuration * 4 });
+        TweenMax.from($('.results-control-buttons'), animationDuration * 4, { opacity: 0, y: 25, delay: animationDuration * 8 });
     }
 }
 
@@ -349,7 +351,7 @@ function navigateToOverview()
 {
     var canContinue = true;
     var nextGradeWeightValue = nextGradeWeightInput.val();
-    if (isNumeric(nextGradeWeightValue) && nextGradeWeightValue >= 1 && nextGradeWeightValue <= 10)
+    if (isNumeric(nextGradeWeightValue) && nextGradeWeightValue >= 1 && nextGradeWeightValue <= 32)
     {
         nextGradeWeight = Math.round(nextGradeWeightValue * 10) / 10;
         sessionStorage.setItem('nextGradeWeight', nextGradeWeight);

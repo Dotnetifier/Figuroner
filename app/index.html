@@ -60,14 +60,14 @@
             <div class="row">
                 <div class="column">
                     <div class="load-data-container">
-                        <button class="small load-data">Opgeslagen gegevens laden</button>
+                        <button class="load-data"><span class="fa fa-upload"></span> Opgeslagen gegevens laden</button>
                         <span class="message data-loaded fa fa-check"></span>
                     </div>
                     <div id="grade-input-form-container">
 
                     </div>
                     <button class="add-grade tiny"><span class="fa fa-plus"></span> Toevoegen</button>
-                    <hr/>
+                    <hr />
                     <button id="enter-grades-complete">Streefcijfer invullen <span class="fa fa-chevron-right"></span></button>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         Vul één of meer cijfers met wegingen in. Controleer of de ingevulde cijfers geen fouten bevatten.
                     </p>
                     <p>
-                        Cijfers en wegingen zijn geldig als ze tussen 1 en 10 liggen.
+                        Cijfers zijn geldig als ze tussen 1 en 10 liggen. Wegingen zijn geldig als ze tussen 1 en 32 liggen.
                     </p>
                 </div>
             </div>
@@ -99,13 +99,13 @@
                         Vul hier de weging van je volgende cijfer in
                     </p>
                     <form>
-                        <input id="next-grade-weight-input" type="number" min="1" max="32" placeholder="Weging volgende cijfer" required/>
+                        <input id="next-grade-weight-input" type="number" min="1" max="32" placeholder="Weging volgende cijfer" required />
                     </form>
                     <p>
                         Vul hier je streefcijfer in
                     </p>
                     <form>
-                        <input id="target-grade-input" type="number" min="1" max="10" step="0.1" placeholder="Streefcijfer" required/>
+                        <input id="target-grade-input" type="number" min="1" max="10" step="0.1" placeholder="Streefcijfer" required />
                     </form>
                     <button id="enter-target-grade-complete">Resultaten bekijken <span class="fa fa-chevron-right"></span></button>
                 </div>
@@ -121,7 +121,7 @@
             <div class="row">
                 <div class="column">
                     <p>
-                        Vul de weging van je volgende cijfer in en vul je streefcijfer in. Beide getallen zijn geldig als ze tussen 1 en 10 liggen.
+                        Vul de weging van je volgende cijfer in en vul je streefcijfer in.<br />Je cijfer is geldig als het tussen 1 en 10 ligt. De weging is geldig als deze tussen 1 en 32 ligt.
                     </p>
                 </div>
             </div>
@@ -148,20 +148,20 @@
                         </tbody>
                     </table>
                     <p>
-                        <b>Weging volgende cijfer:</b> <span id="overview-next-grade-weight"><i>c</i></span><br/>
+                        <b>Weging volgende cijfer:</b> <span id="overview-next-grade-weight"><i>c</i></span><br />
                     </p>
                     <p>
                         <b>Streefcijfer:</b> <span id="overview-target-grade"><i>d</i></span>
                     </p>
                     <div>
+                        <a class="button" id="overview-complete">Cijfer berekenen <span class="fa fa-chevron-right"></span></a>
+                    </div>
+                    <div>
                         <p>
                             Als je deze gegevens opslaat kan je ze op een later moment opnieuw laden.
                         </p>
-                        <button class="save-data small"><span class="fa fa-save"></span> Deze gegevens opslaan</button>
+                        <button class="save-data"><span class="fa fa-download"></span> Deze gegevens opslaan</button>
                         <span class="message data-saved fa fa-check"></span>
-                    </div>
-                    <div>
-                        <a class="button" id="overview-complete">Cijfer berekenen <span class="fa fa-chevron-right"></span></a>
                     </div>
                 </div>
             </div>
@@ -184,19 +184,21 @@
                     <p id="results-desired-grade-comment">
                         <i>"c"</i>
                     </p>
-                    <div>
-                        <a class="button" href="#home"><span class="fa fa-undo"></span> Opnieuw</a>
-                    </div>
-                    <div class="delete-data-container">
-                        <button class="small warning delete-data"><span class="fa fa-remove"></span> Opgeslagen data verwijderen</button>
-                        <span class="message data-deleted fa fa-check"></span>
+                    <div class="results-control-buttons">
+                        <div>
+                            <a class="button" href="#home"><span class="fa fa-undo"></span> Opnieuw</a>
+                        </div>
+                        <div class="delete-data-container">
+                            <button class="warning delete-data"><span class="fa fa-trash-o"></span> Opgeslagen gegevens verwijderen</button>
+                            <span class="message data-deleted fa fa-check"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="footer" class="panel footer fixed-footer">
-            <p class="text-center">© Paul 2015</p>
+            <p class="text-center">© Paul <a href="https://github.com/dotnetifier">@dotnetifier</a> 2015</p>
         </div>
 
         <a class="button button-float back-button scale-zero"><span class="fa fa-chevron-left"></span></a>
